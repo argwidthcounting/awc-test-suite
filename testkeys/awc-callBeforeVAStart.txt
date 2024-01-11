@@ -1,0 +1,3 @@
+Calling printf(..., 'x', 'y', 'z') and sum(10, 1, 2, ... 10) before calling va_start
+x y z 55
+Sum: 1+2+3 = 6

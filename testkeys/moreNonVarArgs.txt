@@ -1,0 +1,2 @@
+Sum, but first 10 digits are required and not variadic
+Sum: 1+2+3...+100 = 5050

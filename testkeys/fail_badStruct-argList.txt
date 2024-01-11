@@ -1,0 +1,29 @@
+--------- dump vaList call 0 ---------
+va_list: 0x00007ffc8b3edd60
+gp_offset: 24
+fp_offset: 48
+overflow_arg_area: 0x00007ffc8b3edda0
+reg_save_area: 0x00007ffc8b3edc90
+remaining: 72
+--------- dump vaList call 1 ---------
+va_list: 0x00007ffc8b3edd60
+gp_offset: 24
+fp_offset: 48
+overflow_arg_area: 0x00007ffc8b3eddb8
+reg_save_area: 0x00007ffc8b3edc90
+remaining: 48
+--------- dump vaList call 2 ---------
+va_list: 0x00007ffc8b3edd60
+gp_offset: 24
+fp_offset: 48
+overflow_arg_area: 0x00007ffc8b3eddd0
+reg_save_area: 0x00007ffc8b3edc90
+remaining: 24
+--------- dump vaList call 3 ---------
+va_list: 0x00007ffc8b3edd60
+gp_offset: 24
+fp_offset: 48
+overflow_arg_area: 0x00007ffc8b3edde8
+reg_save_area: 0x00007ffc8b3edc90
+remaining: 0
+libc++abi: terminating

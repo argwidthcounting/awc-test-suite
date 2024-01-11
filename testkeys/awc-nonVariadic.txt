@@ -1,0 +1,2 @@
+Just making sure nonVariadic functions were not messed up.
+Sum(non-variadic): 1+2+3+...+100 = 5050

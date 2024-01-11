@@ -1,0 +1,7 @@
+--------- dump vaList call 0 ---------
+va_list: 0x00007ffdece91570
+gp_offset: 16
+fp_offset: 48
+overflow_arg_area: 0x00007ffdece915b0
+reg_save_area: 0x00007ffdece914c0
+remaining: 400

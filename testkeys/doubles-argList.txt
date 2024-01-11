@@ -1,0 +1,35 @@
+--------- dump vaList call 0 ---------
+va_list: 0x00007ffd4a19f380
+gp_offset: 16
+fp_offset: 48
+overflow_arg_area: 0x00007ffd4a19f3c0
+reg_save_area: 0x00007ffd4a19f2c0
+remaining: 32
+--------- dump vaList call 1 ---------
+va_list: 0x00007ffd4a19f380
+gp_offset: 16
+fp_offset: 64
+overflow_arg_area: 0x00007ffd4a19f3c0
+reg_save_area: 0x00007ffd4a19f2c0
+remaining: 24
+--------- dump vaList call 2 ---------
+va_list: 0x00007ffd4a19f380
+gp_offset: 16
+fp_offset: 80
+overflow_arg_area: 0x00007ffd4a19f3c0
+reg_save_area: 0x00007ffd4a19f2c0
+remaining: 16
+--------- dump vaList call 3 ---------
+va_list: 0x00007ffd4a19f380
+gp_offset: 16
+fp_offset: 96
+overflow_arg_area: 0x00007ffd4a19f3c0
+reg_save_area: 0x00007ffd4a19f2c0
+remaining: 8
+--------- dump vaList call 4 ---------
+va_list: 0x00007ffd4a19f380
+gp_offset: 16
+fp_offset: 112
+overflow_arg_area: 0x00007ffd4a19f3c0
+reg_save_area: 0x00007ffd4a19f2c0
+remaining: 0

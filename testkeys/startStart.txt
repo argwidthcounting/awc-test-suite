@@ -1,0 +1,2 @@
+Calling va_start 5 times
+Sum: 5*(1+2+3+...+100) = 25250

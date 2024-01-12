@@ -27,9 +27,12 @@ def runTests(c):
         try:
             if "user" in t:
                 continue
-            result = subprocess.run([t, "1", "2", "3"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            result = subprocess.run([t, "1", "2", "3"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)    
+            # Use replace when decoding in case fail tests leak vals that can't be decoded
+            result.stdout = result.stdout.decode('utf-8', 'replace')
         except Exception as e:
             print(f"ERROR: Could not run {t} with {c}")
+            print(e)
             exit(-1)
 
         fileName = os.path.basename(t)
@@ -51,7 +54,7 @@ def main():
     parser = argparse.ArgumentParser(description='Argument Parser for chibi, aclang, and rclang')
 
     # Add arguments
-    parser.add_argument('args', nargs='*', choices=['aclang', 'rclang'], help='Specify arguments: chibi, aclang, rclang')
+    parser.add_argument('args', nargs='*', choices=['aclang', 'rclang', 'achibicc', 'rchibicc'], help='Specify arguments: chibi, aclang, rclang')
 
     # Parse the arguments
     args = parser.parse_args()

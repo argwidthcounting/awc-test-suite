@@ -22,9 +22,9 @@ else
     for a in $2 $3; do
         if [ "$a" = "chibi" ] || [ "$a" = "c" ]; then
             BUILD_CHIBI=true
-            out="$out, chibicc-awc, chibicc-reg"
-            CHIBI="chibicc-reg"
-            CHIBI_AWC="chibicc-awc"
+            out="$out, achibicc, rchibicc"
+            CHIBI="rchibicc"
+            CHIBI_AWC="achibicc"
         fi
         if [ "$a" = "reg" ] || [ "$a" = "r" ]; then
             BUILD_REG=true
@@ -51,8 +51,8 @@ if $BUILD_REG && ! $(type 'rclang' 2>/dev/null | grep -q 'function') ; then
   exit 1
 fi
 
-if $BUILD_CHIBI && ! $(type 'chibicc-awc' 2>/dev/null | grep -q 'function') && ! $(type 'chibicc-reg' 2>/dev/null | grep -q 'function') ; then
-  echo "Error: To build with chibicc, please ensure that $aclangSH contains a chibicc-awc and chibicc-reg function" >&2
+if $BUILD_CHIBI && ! $(type 'achibicc' 2>/dev/null | grep -q 'function') && ! $(type 'rchibicc' 2>/dev/null | grep -q 'function') ; then
+  echo "Error: To build with chibicc, please ensure that $aclangSH contains a achibicc and rchibicc function" >&2
   exit 1
 fi
 
@@ -69,17 +69,31 @@ for compiler in $ACLANG $CHIBI $CHIBI_AWC $REG; do
         fi
         name=$(basename $file .c)
         list="dumpVAList.c"
-        if [ "$compiler" = $ACLANG ] || [ "$compiler" = $ACLANG ]; then
+        if [ "$compiler" = $ACLANG ] || [ "$compiler" = $CHIBI_AWC ]; then
             list="dumpVAList-awc.c"
         fi
 
         echo "Building $name with $compiler"
-        if ! $compiler tests.c $list "$file" -o "../bin/$compiler/$name" 2>/dev/null; then 
-            echo 
-            echo "ERROR: Could not compile $name with $compiler"
-            exit -1
+        if ! [ "$compiler" = "achibicc" ]; then
+            if ! $compiler tests.c "$list" "$file" -o "../bin/$compiler/$name" 2>/dev/null; then 
+                echo 
+                echo "ERROR: Could not compile $name with $compiler"
+                exit -1
+            fi
+        else
+            # Chibicc with AWC only supports one .c file
+            cat tests.c <(echo) "$list" <(echo) "$file" > "achibicc-temp.c"
+            if ! $compiler "achibicc-temp.c" -o "../bin/$compiler/$name" 2>/dev/null; then 
+                echo 
+                echo "ERROR: Could not compile $name with $compiler"
+                exit -1
+            fi
         fi
     done
+
+    if [ -f "achibicc-temp.c" ]; then
+        rm "achibicc-temp.c"
+    fi
 done
 
 cd ../

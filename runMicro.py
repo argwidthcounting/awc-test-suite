@@ -5,8 +5,8 @@ import sys
 awcClangProg = "./bin/benchmark/microbenchmark-aclang"
 regClangProg = "./bin/benchmark/microbenchmark-rclang"
 
-awcChibiProg = "./bin/benchmark/microbenchmark-chibicc-awc"
-regChibiProg = "./bin/benchmark/microbenchmark-chibicc-reg"
+awcChibiProg = "./bin/benchmark/microbenchmark-achibicc"
+regChibiProg = "./bin/benchmark/microbenchmark-rchibicc"
 
 iterations = 100
 tests = [0, 3, 16, 100]

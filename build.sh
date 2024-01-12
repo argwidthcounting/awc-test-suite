@@ -73,9 +73,9 @@ for compiler in $ACLANG $CHIBI $CHIBI_AWC $REG; do
             list="dumpVAList-awc.c"
         fi
 
-        echo "Building $name with $compiler"
+        echo "Building $name with $compiler (with debugging enabled)"
         if ! [ "$compiler" = "achibicc" ]; then
-            if ! $compiler tests.c "$list" "$file" -o "../bin/$compiler/$name" 2>/dev/null; then 
+            if ! $compiler tests.c "$list" "$file" -g -o "../bin/$compiler/$name" 2>/dev/null; then 
                 echo 
                 echo "ERROR: Could not compile $name with $compiler"
                 exit -1
@@ -83,7 +83,7 @@ for compiler in $ACLANG $CHIBI $CHIBI_AWC $REG; do
         else
             # Chibicc with AWC only supports one .c file
             cat tests.c <(echo) "$list" <(echo) "$file" > "achibicc-temp.c"
-            if ! $compiler "achibicc-temp.c" -o "../bin/$compiler/$name" 2>/dev/null; then 
+            if ! $compiler "achibicc-temp.c" -g -o "../bin/$compiler/$name" 2>/dev/null; then 
                 echo 
                 echo "ERROR: Could not compile $name with $compiler"
                 exit -1

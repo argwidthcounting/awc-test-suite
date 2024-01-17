@@ -1,6 +1,6 @@
 #!/bin/bash
 
-aclangSH="$HOME/load_aclang.sh"
+aclangSH="$HOME/load_awc_run_commands.sh"
 BUILD_CHIBI=false
 BUILD_REG=false
 
@@ -10,7 +10,7 @@ CHIBI=""
 CHIBI_AWC=""
 
 if [ $# -eq 0 ]; then
-    echo "Building test files for aclang, assuming load_aclang.sh in $HOME"
+    echo "Building test files for aclang, assuming load_awc_run_commands.sh in $HOME"
 else
     aclangSH="$1"
 fi

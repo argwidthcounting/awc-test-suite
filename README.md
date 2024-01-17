@@ -7,17 +7,17 @@ If you have not already, please see the aclang repository [here](https://github.
 # Building the test files
 The [build.sh](./build.sh) bash script will build all of the testing scripts and benchmarking
 programs for aclang, rclang, rchibicc, and achibicc. To run the build script, you will
-need the load_aclang.sh file that you received while building aclang.
+need the load_awc_run_commands.sh file that you received while building aclang.
 
 ```bash
-# No args will build just awc and assume your load_aclang.sh file is in your $HOME directory
+# No args will build just awc and assume your load_awc_run_commands.sh file is in your $HOME directory
 ./build.sh      
-# The first arg is the path to your load_aclang.sh file, builds aclang only
-./build.sh ./load_aclang.sh
+# The first arg is the path to your load_awc_run_commands.sh file, builds aclang only
+./build.sh ./load_awc_run_commands.sh
 # The next two args can be rclang (r) or chibi (c) to build rclang and chibicc in addition to aclang. Order doesn't matter   
-./build.sh ./load_aclang.sh c r  # Build aclang, rclang, and chibicc tests
-./build.sh ./load_aclang.sh r c
-./build.sh ./load_aclang.sh rclang chibi
+./build.sh ./load_awc_run_commands.sh c r  # Build aclang, rclang, and chibicc tests
+./build.sh ./load_awc_run_commands.sh r c
+./build.sh ./load_awc_run_commands.sh rclang chibi
 ```
 
 When run, build.sh will compile all of the files under [tests](./tests/) with each specified compiler.

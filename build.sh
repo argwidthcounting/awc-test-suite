@@ -69,7 +69,7 @@ for compiler in $ACLANG $CHIBI $CHIBI_AWC $REG; do
         fi
         name=$(basename $file .c)
         list="dumpVAList.c"
-        if [ "$compiler" = $ACLANG ] || [ "$compiler" = $CHIBI_AWC ]; then
+        if [ "$compiler" = "$ACLANG" ] || [ "$compiler" = "$CHIBI_AWC" ]; then
             list="dumpVAList-awc.c"
         fi
 

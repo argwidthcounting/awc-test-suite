@@ -3,5 +3,6 @@ bin
 *.a
 peda-session-*.txt
 load_aclang.sh
+load_awc_run_commands.sh
 .gdb*
 .vscode

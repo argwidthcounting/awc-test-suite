@@ -1,5 +1,9 @@
 # Argument Width Counting Test Suite
 
+
+***SEE [https://github.com/Ktrio3/awc-test-suite](https://github.com/Ktrio3/awc-test-suite) FOR ANY POTENTIAL UPDATES*** This is an old anonymized repo used for double-blind review.
+
+
 This repository contains the scripts and programs used to test AWC-enabled Clang.
 
 If you have not already, please see the aclang repository [here](https://github.com/argwidthcounting/awc-clang).
